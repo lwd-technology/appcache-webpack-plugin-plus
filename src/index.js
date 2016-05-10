@@ -27,8 +27,16 @@ class AppCache {
       this.settings && this.settings.length ? `SETTINGS:\n${this.settings.join('\n')}\n` : null,
     ].filter(v => v && v.length).join('\n');
   }
+  
+  prepareCache() {
+    this.cache = this.cache.map(asset => {
+      return asset.replace('{hash}', this.hash);
+    });
+  }
 
   source() {
+    this.prepareCache();
+    
     return [
       'CACHE MANIFEST',
       `# ${this.hash}`,
