@@ -30,9 +30,11 @@ class AppCache {
   }
 
   prepareCache() {
-    this.cache = this.cache.map(asset => {
+    if (this.cache) {
+      this.cache = this.cache.map(asset => {
           return asset.replace('{hash}', this.hash).replace('{chunkhash}', this.chunkHash);
-  });
+      });
+    }
   }
 
   source() {
