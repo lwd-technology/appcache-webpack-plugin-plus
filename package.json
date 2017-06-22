@@ -9,6 +9,7 @@
   },
   "scripts": {
     "prepublish": "make build",
+    "postinstall": "make build",
     "test": "make test"
   },
   "repository": {
