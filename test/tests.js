@@ -184,14 +184,14 @@ describe('AppCache', () => {
     it('includes added assets', () => {
       const appCache = new AppCache();
       appCache.addAsset('test.asset');
-      assert(appCache.getManifestBody() === 'test.asset\n');
+      assert(appCache.getManifestBody() === 'CACHE:\ntest.asset');
     });
 
     describe('CACHE section', () => {
 
       it('includes CACHE section items', () => {
         const appCache = new AppCache(cacheEntries);
-        assert(appCache.getManifestBody() === 'CACHE:\ncache.test\n');
+        assert(appCache.getManifestBody() === 'cache.test\n');
       });
 
       it('excludes empty CACHE section', () => {
@@ -205,7 +205,7 @@ describe('AppCache', () => {
 
       it('includes NETWORK section items', () => {
         const appCache = new AppCache(null, networkEntries);
-        assert(appCache.getManifestBody() === 'NETWORK:\nnetwork.test\n');
+        assert(appCache.getManifestBody() === '\nNETWORK:\nnetwork.test');
       });
 
       it('excludes empty NETWORK section', () => {
@@ -219,7 +219,7 @@ describe('AppCache', () => {
 
       it('includes FALLBACK section items', () => {
         const appCache = new AppCache(null, null, fallbackEnteries);
-        assert(appCache.getManifestBody() === 'FALLBACK:\nfallback.test\n');
+        assert(appCache.getManifestBody() === '\nFALLBACK:\nfallback.test');
       });
 
       it('excludes empty FALLBACK section', () => {
@@ -233,7 +233,7 @@ describe('AppCache', () => {
 
       it('includes SETTINGS section', () => {
         const appCache = new AppCache(null, null, null, settingsEntries);
-        assert(appCache.getManifestBody() === 'SETTINGS:\nprefer-online\n');
+        assert(appCache.getManifestBody() === '\nSETTINGS:\nprefer-online');
       });
 
       it('excludes empty SETTINGS section', () => {
@@ -272,7 +272,7 @@ describe('AppCache', () => {
     it('measures byte size', () => {
       const hash = createHash('md5').digest('hex');
       const appCache = new AppCache(cacheEntries, networkEntries, fallbackEnteries, settingsEntries, hash);
-      assert(appCache.size() === 142);
+      assert(appCache.size() === 135);
     });
 
   });

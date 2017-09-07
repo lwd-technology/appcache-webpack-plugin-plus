@@ -20,11 +20,11 @@ class AppCache {
 
   getManifestBody() {
     return [
-      this.assets && this.assets.length ? `${this.assets.join('\n')}\n` : null,
-      this.cache && this.cache.length ? `CACHE:\n${this.cache.join('\n')}\n` : null,
-      this.network && this.network.length ? `NETWORK:\n${this.network.join('\n')}\n` : null,
-      this.fallback && this.fallback.length ? `FALLBACK:\n${this.fallback.join('\n')}\n` : null,
-      this.settings && this.settings.length ? `SETTINGS:\n${this.settings.join('\n')}\n` : null,
+      this.assets && this.assets.length ? `CACHE:\n${this.assets.join('\n')}` : null,
+      this.cache && this.cache.length ? `${this.cache.join('\n')}\n` : null,
+      this.network && this.network.length ? `\nNETWORK:\n${this.network.join('\n')}` : null,
+      this.fallback && this.fallback.length ? `\nFALLBACK:\n${this.fallback.join('\n')}` : null,
+      this.settings && this.settings.length ? `\nSETTINGS:\n${this.settings.join('\n')}` : null,
     ].filter(v => v && v.length).join('\n');
   }
 
