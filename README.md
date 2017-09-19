@@ -5,7 +5,8 @@ Derived from the original [`appcache-webpack-plugin`](https://github.com/lettert
 ## Usage
 
 ```javascript
-const AppcachePlugin = require('appcache-webpack-plugin-plus')
+// Note the `.default`!
+const AppcachePlugin = require('appcache-webpack-plugin-plus').default
 
 module.exports = {
   plugins: [
