@@ -1,8 +1,11 @@
 {
-  "name": "appcache-webpack-plugin",
-  "version": "1.3.0",
-  "author": "Eric Eldredge <lettertwo@gmail.com>",
-  "description": "Generate an HTML5 Application Cache for a Webpack build",
+  "name": "appcache-webpack-plugin-plus",
+  "version": "1.4.0",
+  "contributors": [
+    "Eric Eldredge <lettertwo@gmail.com>",
+    "Ian Copp <ian@wolflair.com>"
+  ],
+  "description": "Generate an application cache for a Webpack build",
   "main": "./lib/index.js",
   "scripts": {
     "prepublish": "make build",
@@ -15,14 +18,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/lettertwo/appcache-webpack-plugin.git"
+    "url": "http://github.com/lwd-technology/appcache-webpack-plugin-plus.git"
   },
   "keywords": ["webpack", "appcache", "application", "cache", "plugin"],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lettertwo/appcache-webpack-plugin/issues"
+    "url":
+      "https://github.com/lwd-technology/appcache-webpack-plugin-plus/issues"
   },
-  "homepage": "https://github.com/lettertwo/appcache-webpack-plugin",
+  "homepage": "https://github.com/lwd-technology/appcache-webpack-plugin-plus",
   "devDependencies": {
     "babel": "^5.8.23",
     "babel-core": "^5.8.23",
