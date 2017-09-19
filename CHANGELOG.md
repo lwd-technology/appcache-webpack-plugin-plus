@@ -1,3 +1,8 @@
+## 2.0.0
+
+* Converted to Typescript and somewhat simplified
+* Updated to work with Webpack 3
+
 ## 1.3.0
 
 * Include support for webpack 2

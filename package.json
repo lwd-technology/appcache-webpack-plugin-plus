@@ -1,6 +1,6 @@
 {
   "name": "appcache-webpack-plugin-plus",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "contributors": [
     "Eric Eldredge <lettertwo@gmail.com>",
     "Ian Copp <ian@wolflair.com>"
