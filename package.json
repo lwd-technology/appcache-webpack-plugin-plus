@@ -7,10 +7,21 @@
   ],
   "description": "Generate an application cache for a Webpack build",
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "./lib/index.js",
+    "./lib/index.d.ts",
+    "./lib/index.js.map",
+    "./src/index.ts"
+  ],
   "scripts": {
-    "prepublish": "make build",
-    "test": "make test",
-    "precommit": "lint-staged"
+    "build": "tsc -p .",
+    "precommit": "lint-staged",
+    "prepublishOnly": "npm run build",
+    "test": "mocha -r ts-node/register test/**/*.ts"
+  },
+  "engines": {
+    "node": ">=8.5.0"
   },
   "lint-staged": {
     "*.js": ["prettier --write", "git add"],
@@ -28,12 +39,10 @@
   },
   "homepage": "https://github.com/lwd-technology/appcache-webpack-plugin-plus",
   "devDependencies": {
-    "babel": "^5.8.23",
-    "babel-core": "^5.8.23",
-    "babel-eslint": "^4.1.1",
-    "babel-plugin-espower": "^1.0.0",
-    "babel-runtime": "^5.8.20",
-    "eslint": "^1.10.3",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.28",
+    "@types/webpack": "^3.0.10",
+    "eslint": "^4.7.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-babel": "^2.1.1",
     "eslint-plugin-import": "^2.7.0",
@@ -41,13 +50,14 @@
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "git-release-notes": "^0.0.2",
     "husky": "^0.14.3",
     "lint-staged": "^4.2.1",
-    "mocha": "^2.3.2",
-    "mversion": "^1.10.1",
+    "mocha": "^3.5.3",
     "power-assert": "^1.0.0",
     "prettier": "^1.7.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2",
+    "typescript-eslint-parser": "^8.0.0",
     "webpack": ">=0.11 <2.0.0 || >=2.1.0-beta.13 <3.0.0 || ^3.2.0"
   }
 }
