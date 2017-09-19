@@ -1,6 +1,6 @@
 {
   "name": "appcache-webpack-plugin-plus",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "contributors": [
     "Eric Eldredge <lettertwo@gmail.com>",
     "Ian Copp <ian@wolflair.com>"
@@ -8,12 +8,7 @@
   "description": "Generate an application cache for a Webpack build",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "files": [
-    "./lib/index.js",
-    "./lib/index.d.ts",
-    "./lib/index.js.map",
-    "./src/index.ts"
-  ],
+  "files": ["lib/", "src/index.ts"],
   "scripts": {
     "build": "tsc -p .",
     "precommit": "lint-staged",
