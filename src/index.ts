@@ -55,7 +55,9 @@ export default class AppCachePlugin {
         compilation: {
           hash: string
           chunkhash: string
-          assets: { [filename: string]: { source: string; size: number } }
+          assets: {
+            [filename: string]: { source: () => string; size: () => number }
+          }
         },
         callback: () => void
       ) => {
@@ -101,8 +103,8 @@ export default class AppCachePlugin {
           .join('\n')
 
         compilation.assets[this.output] = {
-          source: finalManifest,
-          size: Buffer.byteLength(finalManifest)
+          source: () => finalManifest,
+          size: () => Buffer.byteLength(finalManifest)
         }
         callback()
       }
